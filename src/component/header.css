@@ -1,0 +1,19 @@
+.input_cont{
+    display: flex;
+}
+
+.input_val{
+    padding-left: 50%;
+    
+    border-radius: 5px;
+    border: 1px solid #bfb9b9;
+}
+.button{
+    padding: 4%;
+    width: 63%;
+    background: white;
+    font-size: 100%;
+    color: red;
+    border-radius: 5px;
+    border: 1px solid #bfb9b9;
+}
