@@ -7,7 +7,7 @@ const hoc = WrappedComponnent  =>{
         render() { 
              const {isLoading}=this.props
             if(isLoading===true)return <Loading/>
-           else return ( <WrappedComponnent /> );
+           else return ( <WrappedComponnent {...this.props}/> );
         }
     }
      
