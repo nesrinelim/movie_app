@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Item from './item'
 import * as _b_ from 'react-bootstrap';
-import Rating from './rating' 
+
+ import hoc from './hoc'
 const tab=[
     {title:'blade runner',
     img:'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg',
@@ -78,5 +79,5 @@ class List extends Component {
         </div>)
     }
 }
- 
-export default List;
+// export default List;
+ export default hoc(List);

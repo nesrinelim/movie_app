@@ -4,6 +4,7 @@ import Header from './component/header'
 import Rating from './component/rating'
 import Add  from './component/add'
 
+
 import './App.css';
 
 
@@ -14,7 +15,8 @@ class App extends Component {
     this.state={
       wordToSearch:'',
      rate:0,
-     elt:{}
+     elt:{},
+     isLoading:true
     }
   }
   affich=(word)=>{
@@ -26,21 +28,37 @@ class App extends Component {
   elmtToAdd=(element)=>{
     this.setState({elt:element})
   }
+  // load=()=>{
+  //   setInterval(() => { setState({isLoading:false})},2000)
+  // }
+
+  
+    
+    intervald = setTimeout(
+        () => { 
+          this.setState({
+            isLoading:false
+          })
+      },
+        1000
+      )
+    
+
  
   render() {
-    return (
-      <div className="App">
-     <div className="header">
-       <Header affich={this.affich} />
-       <div className='rate_comp'><Rating getrating={this.recupRating} /></div>
-      </div> 
-       <List  word={this.state.wordToSearch} rate={this.state.rate} element={this.state.elt}/>
-       <Add elmtToAdd={this.elmtToAdd}/>
-       
+    return (<div className="App">
+    <div className="header">
+      <Header affich={this.affich} />
+      <div className='rate_comp'><Rating getrating={this.recupRating} /></div>
+     </div> 
+      <List  word={this.state.wordToSearch} rate={this.state.rate} element={this.state.elt}  isLoading={this.state.isLoading} />
+      <Add elmtToAdd={this.elmtToAdd}/>
+      
 
-       
-      </div>
-    );
+      
+     </div>)
+      
+    ;
   }
 }
 
